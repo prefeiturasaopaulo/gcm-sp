@@ -38,22 +38,29 @@
       font-size: 13px;
       border-bottom: 3px solid #004aad;
     }
+
     .prefeitura-info {
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: bold;
     }
+
     .prefeitura-logo {
       height: 30px;
       width: auto;
       object-fit: contain;
       display: block;
     }
-    
+
     .social a {
-      margin-left: 14px;
+      margin-left: 16px;
       color: #fff;
       font-weight: bold;
+    }
+
+    .social a:hover {
+      color: #7db7ff;
     }
 
     header {
@@ -68,27 +75,29 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
     }
-    
-  .logo {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  display: block;
-  max-width: 70px;
-  max-height: 70px;
-}
+
+    .logo {
+      width: 78px;
+      height: 78px;
+      max-width: 78px;
+      max-height: 78px;
+      object-fit: contain;
+      display: block;
+    }
+
     .brand h1 {
-      font-size: 25px;
+      font-size: 28px;
       line-height: 1.1;
     }
 
     .brand p {
-      font-size: 12px;
+      font-size: 13px;
       color: #d1d5db;
       text-transform: uppercase;
       letter-spacing: 1px;
+      font-weight: bold;
     }
 
     nav {
@@ -97,7 +106,6 @@
       padding: 0 6%;
       display: flex;
       flex-wrap: wrap;
-      gap: 0;
     }
 
     nav a {
@@ -138,7 +146,7 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       margin-bottom: 20px;
-      background: rgba(215,25,32,.15);
+      background: rgba(0,74,173,.2);
     }
 
     .hero h2 {
@@ -171,7 +179,7 @@
     }
 
     .btn:hover {
-      background: #a90f15;
+      background: #003b7a;
       transform: translateY(-2px);
     }
 
@@ -361,6 +369,11 @@
         text-align: center;
       }
 
+      .brand {
+        flex-direction: column;
+        text-align: center;
+      }
+
       nav {
         justify-content: center;
       }
@@ -382,10 +395,11 @@
 <body>
 
   <div class="topbar">
-   <div class="prefeitura-info">
-  <img src="prefeitura-sp.png" alt="Prefeitura de São Paulo" class="prefeitura-logo">
-  <span>Prefeitura do Município de São Paulo • Portal Institucional</span>
-  </div>
+    <div class="prefeitura-info">
+      <img src="prefeitura-sp.png" alt="Prefeitura de São Paulo" class="prefeitura-logo">
+      <span>Prefeitura do Município de São Paulo • Portal Institucional</span>
+    </div>
+
     <div class="social">
       <a href="https://www.instagram.com/gcmsp_official/" target="_blank">Instagram</a>
       <a href="https://www.youtube.com/@gcmspoficialvirtual" target="_blank">YouTube</a>
@@ -401,14 +415,23 @@
         <p>Secretaria Municipal de Segurança Urbana</p>
       </div>
     </div>
+
     <strong>Emergência: 153</strong>
   </header>
 
   <nav>
-  <a href="comunidade.html">Comunidade</a>
+    <a href="#inicio">Início</a>
+    <a href="#institucional">Institucional</a>
+    <a href="#noticias">Notícias</a>
+    <a href="#operacoes">Operações</a>
+    <a href="#programas">Programas</a>
+    <a href="#transparencia">Transparência</a>
+    <a href="#comunidade">Comunidade</a>
+    <a href="#contato">Fale Conosco</a>
   </nav>
 
   <main id="inicio">
+
     <section class="hero">
       <div class="hero-content">
         <span class="tag">Portal Institucional</span>
@@ -446,64 +469,6 @@
       </div>
     </section>
 
-    <section class="dark" id="operacoes">
-      <div class="section-title">
-        <small>Unidades</small>
-        <h2>Unidades Especializada</h2>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>ROMU - Rondas Ostensivas Municipal</h3>
-          <p>Patrulhamento tático especializado voltado para ações preventivas e ocorrências de maior complexidade.</p>
-        </div>
-
-        <div class="card">
-          <h3>DITRAN - Divisão de Trânsito</h3>
-          <p>Apoio às ações de mobilidade urbana, fiscalização e orientação do trânsito municipal.</p>
-        </div>
-
-        <div class="card">
-          <h3>IDAM - Inspetoria de Defesa Ambiental</h3>
-          <p>Proteção ambiental, fiscalização de áreas protegidas, combate a crimes ambientais e preservação dos recursos naturais.</p>
-        </div>
-
-        <div class="card">
-          <h3>ROMO - Rondas Ostensivas com Motocicletas</h3>
-          <p>Equipe especializada em patrulhamento ágil e deslocamento rápido para atendimento de ocorrências.</p>
-        </div>
-
-        <div class="card">
-          <h3>IDMAS - Inspetoria de Defesa da Mulher e Ações Sociais</h3>
-          <p>Ações sociais, proteção à mulher, mediação de conflitos e programas preventivos junto à comunidade.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="programas">
-      <div class="section-title">
-        <small>Projetos</small>
-        <h2>Programas Institucionais</h2>
-      </div>
-
-      <div class="grid">
-        <a class="card" href="#programas">
-          <h3>Guardiã Maria da Penha</h3>
-          <p>Proteção e acompanhamento de mulheres vítimas de violência doméstica.</p>
-        </a>
-
-        <a class="card" href="#programas">
-          <h3>Segurança Escolar</h3>
-          <p>Ações preventivas, orientação e presença comunitária em unidades escolares.</p>
-        </a>
-
-        <a class="card" href="#programas">
-          <h3>Proteção Ambiental</h3>
-          <p>Fiscalização e preservação de áreas verdes, parques e recursos ambientais.</p>
-        </a>
-      </div>
-    </section>
-
     <section id="noticias">
       <div class="section-title">
         <small>Comunicação</small>
@@ -537,6 +502,64 @@
             <p>Ações buscam preservar áreas públicas e combater infrações ambientais.</p>
           </div>
         </article>
+      </div>
+    </section>
+
+    <section class="dark" id="operacoes">
+      <div class="section-title">
+        <small>Unidades</small>
+        <h2>Unidades Especializadas</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>ROMU - Rondas Ostensivas Municipal</h3>
+          <p>Patrulhamento tático especializado voltado para ações preventivas e atendimento de ocorrências de maior complexidade.</p>
+        </div>
+
+        <div class="card">
+          <h3>DITRAN - Divisão de Trânsito</h3>
+          <p>Responsável pelo apoio às ações de mobilidade urbana, fiscalização e orientação do trânsito municipal.</p>
+        </div>
+
+        <div class="card">
+          <h3>IDAM - Inspetoria de Defesa Ambiental</h3>
+          <p>Atuação voltada à proteção ambiental, fiscalização de áreas protegidas, combate a crimes ambientais e preservação dos recursos naturais.</p>
+        </div>
+
+        <div class="card">
+          <h3>ROMO - Rondas Ostensivas com Motocicletas</h3>
+          <p>Equipe especializada em patrulhamento ágil e deslocamento rápido para atendimento de ocorrências.</p>
+        </div>
+
+        <div class="card">
+          <h3>IDMAS - Inspetoria de Defesa da Mulher e Ações Sociais</h3>
+          <p>Responsável por ações sociais, proteção à mulher, mediação de conflitos e programas preventivos junto à comunidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="programas">
+      <div class="section-title">
+        <small>Projetos</small>
+        <h2>Programas Institucionais</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="#programas">
+          <h3>Guardiã Maria da Penha</h3>
+          <p>Proteção e acompanhamento de mulheres vítimas de violência doméstica.</p>
+        </a>
+
+        <a class="card" href="#programas">
+          <h3>Segurança Escolar</h3>
+          <p>Ações preventivas, orientação e presença comunitária em unidades escolares.</p>
+        </a>
+
+        <a class="card" href="#programas">
+          <h3>Proteção Ambiental</h3>
+          <p>Fiscalização e preservação de áreas verdes, parques e recursos ambientais.</p>
+        </a>
       </div>
     </section>
 
@@ -577,7 +600,7 @@
             Espaço para comunicação, avisos, integração comunitária e acompanhamento das informações da corporação.
           </p>
           <br />
-         <a class="btn" href="https://discord.gg/tEqucstfMV" target="_blank">Entrar no servidor</a>
+          <a class="btn" href="#" target="_blank">Entrar no servidor</a>
         </div>
 
         <div class="discord-stats">
@@ -610,24 +633,24 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="footer-grid">
       <div>
-        <h3>GCM-SP</h3>
-        <p>Guarda Civil Metropolitana de São Paulo.</p>
-        <p>Portal institucional não oficial em desenvolvimento.</p>
+        <h3>Guarda Civil Metropolitana</h3>
+        <p>Secretaria Municipal de Segurança Urbana.</p>
+        <p>Portal institucional comunitário inspirado na Guarda Civil Metropolitana de São Paulo.</p>
       </div>
 
       <div>
         <h3>Links</h3>
         <a href="#institucional">Institucional</a>
+        <a href="#noticias">Notícias</a>
         <a href="#operacoes">Operações</a>
         <a href="#programas">Programas</a>
         <a href="#transparencia">Transparência</a>
-        <a href="#comunidade">Comunidade</a>
-        <a href="#contato">Fale Conosco</a>
       </div>
 
       <div>
