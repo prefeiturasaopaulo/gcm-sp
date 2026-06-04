@@ -12,7 +12,7 @@ body {
 
 .topo {
   background: #2f2f31;
-  border-bottom: 3px solid #d60000;
+  border-bottom: 3px solid #0057b8;
   color: white;
   min-height: 120px;
 }
@@ -85,7 +85,7 @@ nav a:hover {
   align-items: center;
   padding-left: 70px;
   color: white;
-  border-bottom: 3px solid #d60000;
+  border-bottom: 3px solid #0057b8;
 }
 
 .banner-texto {
@@ -104,7 +104,7 @@ nav a:hover {
 
 .botao {
   display: inline-block;
-  background: #d60000;
+  background: #0057b8;
   color: white;
   padding: 13px 24px;
   text-decoration: none;
@@ -113,7 +113,7 @@ nav a:hover {
 }
 
 .botao:hover {
-  background: #a80000;
+  background: #003f85;
 }
 
 .atalhos {
@@ -157,7 +157,7 @@ nav a:hover {
 
 .conteudo h2 {
   margin-bottom: 25px;
-  border-left: 5px solid #d60000;
+  border-left: 5px solid #0057b8;
   padding-left: 12px;
 }
 
@@ -170,7 +170,7 @@ nav a:hover {
 .noticias article {
   background: #f5f5f5;
   padding: 25px;
-  border-top: 4px solid #d60000;
+  border-top: 4px solid #0057b8;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
@@ -182,7 +182,7 @@ nav a:hover {
   background: #111;
   color: white;
   padding: 60px 45px;
-  border-bottom: 3px solid #d60000;
+  border-bottom: 3px solid #0057b8;
 }
 
 .pagina-titulo h2 {
@@ -203,7 +203,7 @@ nav a:hover {
 }
 
 .institucional h3 {
-  color: #d60000;
+  color: #0057b8;
   margin-bottom: 10px;
   font-size: 24px;
 }
@@ -291,7 +291,7 @@ footer {
 .formulario button {
   width: 180px;
   padding: 12px;
-  background: #d60000;
+  background: #0057b8;
   color: white;
   border: none;
   font-weight: bold;
@@ -299,7 +299,7 @@ footer {
 }
 
 .formulario button:hover {
-  background: #a80000;
+  background: #003f85;
 }
 
 /* ===== DISCORD ===== */
