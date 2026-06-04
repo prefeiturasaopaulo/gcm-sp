@@ -256,3 +256,39 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario label {
+  font-weight: bold;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.formulario textarea {
+  height: 140px;
+  resize: vertical;
+}
+
+.formulario button {
+  width: 180px;
+  padding: 12px;
+  background: #d60000;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.formulario button:hover {
+  background: #a80000;
+}
