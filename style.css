@@ -314,3 +314,17 @@ footer {
   max-width: 100%;
   border-radius: 8px;
 }
+
+.discord-widget {
+    background: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.discord-widget h2 {
+    margin-bottom: 20px;
+}
+
+.discord-widget iframe {
+    border-radius: 10px;
+}
