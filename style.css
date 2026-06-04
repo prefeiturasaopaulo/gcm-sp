@@ -292,3 +292,25 @@ footer {
 .formulario button:hover {
   background: #a80000;
 }
+
+.discord-area {
+  background: #fff;
+  padding: 45px;
+  text-align: center;
+}
+
+.discord-area h2 {
+  margin-bottom: 10px;
+  border-left: 5px solid #d60000;
+  padding-left: 12px;
+  display: inline-block;
+}
+
+.discord-area p {
+  margin: 15px 0 25px;
+}
+
+.discord-area iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
