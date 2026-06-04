@@ -1,591 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Institucional - Guarda Civil Metropolitana</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f8;
-      color: #111827;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .topbar {
-      background: #2b2b2b;
-      color: #fff;
-      padding: 10px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 13px;
-      border-bottom: 3px solid #004aad;
-    }
-
-    .prefeitura-info {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: bold;
-    }
-
-    .prefeitura-logo {
-      height: 30px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
-
-    .social a {
-      margin-left: 16px;
-      color: #fff;
-      font-weight: bold;
-    }
-
-    .social a:hover {
-      color: #7db7ff;
-    }
-
-    header {
-      background: #111827;
-      color: #fff;
-      padding: 24px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .logo {
-      width: 78px;
-      height: 78px;
-      max-width: 78px;
-      max-height: 78px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .brand h1 {
-      font-size: 28px;
-      line-height: 1.1;
-    }
-
-    .brand p {
-      font-size: 13px;
-      color: #d1d5db;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: bold;
-    }
-
-    nav {
-      background: #0b2a55;
-      color: #fff;
-      padding: 0 6%;
-      display: flex;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      padding: 15px 18px;
-      font-size: 14px;
-      font-weight: bold;
-      border-left: 1px solid rgba(255,255,255,0.12);
-    }
-
-    nav a:hover {
-      background: #004aad;
-    }
-
-    .page-hero {
-      background:
-        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)),
-        url("https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=1600&q=80");
-      background-size: cover;
-      background-position: center;
-      color: white;
-      padding: 90px 6%;
-    }
-
-    .page-hero small {
-      color: #7db7ff;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-    }
-
-    .page-hero h2 {
-      font-size: clamp(38px, 6vw, 64px);
-      line-height: 1;
-      margin: 16px 0;
-      text-transform: uppercase;
-    }
-
-    .page-hero p {
-      max-width: 760px;
-      color: #e5e7eb;
-      font-size: 18px;
-    }
-
-    section {
-      padding: 70px 6%;
-    }
-
-    .section-title {
-      margin-bottom: 30px;
-      border-left: 4px solid #004aad;
-      padding-left: 14px;
-    }
-
-    .section-title small {
-      color: #004aad;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .section-title h2 {
-      font-size: 34px;
-      color: #111827;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: #fff;
-      padding: 26px;
-      border-radius: 6px;
-      box-shadow: 0 6px 20px rgba(0,0,0,.08);
-      border-top: 4px solid #0b2a55;
-      transition: .2s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-top-color: #004aad;
-    }
-
-    .card h3 {
-      color: #0b2a55;
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .card p, .card li {
-      color: #4b5563;
-      font-size: 15px;
-    }
-
-    .dark {
-      background: #111827;
-      color: white;
-    }
-
-    .dark .section-title h2 {
-      color: white;
-    }
-
-    .dark .card {
-      background: #1f2937;
-      border-top-color: #e5b634;
-    }
-
-    .dark .card h3 {
-      color: white;
-    }
-
-    .dark .card p, .dark .card li {
-      color: #d1d5db;
-    }
-
-    .timeline {
-      border-left: 4px solid #004aad;
-      padding-left: 24px;
-    }
-
-    .timeline-item {
-      background: white;
-      margin-bottom: 18px;
-      padding: 22px;
-      border-radius: 6px;
-      box-shadow: 0 6px 20px rgba(0,0,0,.08);
-    }
-
-    .timeline-item h3 {
-      color: #0b2a55;
-      margin-bottom: 8px;
-    }
-
-    .brasao-box {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 30px;
-      align-items: center;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 6px 20px rgba(0,0,0,.08);
-    }
-
-    .brasao-box img {
-      width: 200px;
-      max-width: 100%;
-      object-fit: contain;
-    }
-
-    footer {
-      background: #0b0f19;
-      color: #fff;
-      padding: 40px 6%;
-      border-top: 4px solid #004aad;
-    }
-
-    footer .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 30px;
-    }
-
-    footer h3 {
-      margin-bottom: 14px;
-      color: #fff;
-    }
-
-    footer p, footer a {
-      color: #d1d5db;
-      font-size: 14px;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .copyright {
-      margin-top: 28px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      font-size: 13px;
-      color: #9ca3af;
-    }
-
-    @media (max-width: 800px) {
-      header, .topbar {
-        flex-direction: column;
-        gap: 14px;
-        text-align: center;
-      }
-
-      .brand {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav {
-        justify-content: center;
-      }
-
-      nav a {
-        padding: 12px;
-        font-size: 13px;
-      }
-
-      .brasao-box,
-      footer .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .brasao-box {
-        text-align: center;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Institucional</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="topbar">
-    <div class="prefeitura-info">
-      <img src="prefeitura-sp.png" alt="Prefeitura de São Paulo" class="prefeitura-logo">
-      <span>Prefeitura do Município de São Paulo • Portal Institucional</span>
-    </div>
-
-    <div class="social">
-      <a href="https://www.instagram.com/gcmsp_official/" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/@gcmspoficialvirtual" target="_blank">YouTube</a>
-      <a href="index.html#comunidade">Discord</a>
+<header class="topo">
+  <div class="logo-area">
+    <div class="brasao">★</div>
+    <div>
+      <h1>PORTAL INSTITUCIONAL</h1>
+      <p>Segurança, ordem e compromisso</p>
     </div>
   </div>
 
-  <header>
-    <div class="brand">
-      <img src="brasao-gcm.png" alt="Brasão GCM-SP" class="logo">
-      <div>
-        <h1>Guarda Civil Metropolitana</h1>
-        <p>Secretaria Municipal de Segurança Urbana</p>
-      </div>
-    </div>
-
-    <strong>Emergência: 153</strong>
-  </header>
-
   <nav>
-    <a href="index.html">Início</a>
-    <a href="institucional.html">Institucional</a>
-    <a href="index.html#noticias">Notícias</a>
-    <a href="index.html#operacoes">Operações</a>
-    <a href="index.html#programas">Programas</a>
-    <a href="index.html#transparencia">Transparência</a>
-    <a href="index.html#comunidade">Comunidade</a>
-    <a href="index.html#contato">Fale Conosco</a>
+    <a href="index.html">INÍCIO</a>
+    <a href="institucional.html">INSTITUCIONAL</a>
+    <a href="#">SERVIÇOS</a>
+    <a href="#">COMUNIDADE</a>
+    <a href="#">FALE CONOSCO</a>
   </nav>
+</header>
 
-  <main>
+<section class="pagina-titulo">
+  <h2>Institucional</h2>
+  <p>Conheça nossa missão, visão, valores e estrutura.</p>
+</section>
 
-    <section class="page-hero">
-      <small>Institucional</small>
-      <h2>Conheça a Corporação</h2>
-      <p>
-        A Guarda Civil Metropolitana atua na proteção preventiva da população,
-        dos bens, serviços e instalações municipais, fortalecendo a segurança urbana
-        e a proximidade com a comunidade.
-      </p>
-    </section>
+<main class="institucional">
+  <section>
+    <h3>Sobre a Instituição</h3>
+    <p>
+      A instituição atua com foco na segurança, prevenção, orientação e atendimento
+      à comunidade, buscando oferecer serviços eficientes e acessíveis.
+    </p>
+  </section>
 
-    <section>
-      <div class="section-title">
-        <small>História</small>
-        <h2>Sobre a Guarda Civil Metropolitana</h2>
-      </div>
+  <section>
+    <h3>Missão</h3>
+    <p>
+      Promover segurança, organização e apoio à população por meio de ações
+      preventivas, atendimento qualificado e presença comunitária.
+    </p>
+  </section>
 
-      <div class="card">
-        <p>
-          A Guarda Civil Metropolitana é uma instituição de segurança urbana voltada à proteção
-          preventiva, ao apoio às políticas públicas municipais e à preservação dos bens, serviços
-          e instalações do município.
-        </p>
-        <br>
-        <p>
-          Sua atuação busca integrar presença operacional, cidadania, prevenção, mediação de conflitos
-          e apoio à população, contribuindo para uma cidade mais segura, organizada e participativa.
-        </p>
-      </div>
-    </section>
+  <section>
+    <h3>Visão</h3>
+    <p>
+      Ser reconhecida como uma instituição moderna, transparente e próxima do cidadão.
+    </p>
+  </section>
 
-    <section class="dark">
-      <div class="section-title">
-        <small>Princípios</small>
-        <h2>Missão, Visão e Valores</h2>
-      </div>
+  <section>
+    <h3>Valores</h3>
+    <ul>
+      <li>Disciplina</li>
+      <li>Respeito</li>
+      <li>Responsabilidade</li>
+      <li>Transparência</li>
+      <li>Compromisso social</li>
+    </ul>
+  </section>
+</main>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Missão</h3>
-          <p>
-            Proteger a população, preservar o patrimônio público municipal e contribuir para a segurança urbana
-            por meio de ações preventivas, comunitárias e integradas.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Visão</h3>
-          <p>
-            Ser referência em segurança urbana municipal, proximidade comunitária, modernização operacional
-            e excelência no serviço público.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Valores</h3>
-          <p>
-            Ética, disciplina, legalidade, transparência, respeito ao cidadão, responsabilidade,
-            compromisso social e valorização da vida.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">
-        <small>Atuação</small>
-        <h2>Competências Institucionais</h2>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Proteção Municipal</h3>
-          <p>Proteção dos bens, serviços, instalações e espaços públicos municipais.</p>
-        </div>
-
-        <div class="card">
-          <h3>Patrulhamento Preventivo</h3>
-          <p>Presença ostensiva preventiva em áreas estratégicas e pontos de interesse público.</p>
-        </div>
-
-        <div class="card">
-          <h3>Apoio à População</h3>
-          <p>Atendimento, orientação e apoio ao cidadão em situações de risco, emergência ou vulnerabilidade.</p>
-        </div>
-
-        <div class="card">
-          <h3>Segurança Comunitária</h3>
-          <p>Integração com a comunidade, ações educativas, mediação de conflitos e projetos sociais.</p>
-        </div>
-
-        <div class="card">
-          <h3>Proteção Ambiental</h3>
-          <p>Atuação na preservação ambiental, fiscalização e proteção de áreas verdes e recursos naturais.</p>
-        </div>
-
-        <div class="card">
-          <h3>Ações Integradas</h3>
-          <p>Cooperação com órgãos municipais, estaduais e demais instituições de segurança pública.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="dark">
-      <div class="section-title">
-        <small>Estrutura</small>
-        <h2>Unidades Especializadas</h2>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>ROMU</h3>
-          <p>Rondas Ostensivas Municipal, unidade voltada ao patrulhamento tático especializado.</p>
-        </div>
-
-        <div class="card">
-          <h3>DITRAN</h3>
-          <p>Divisão de Trânsito, responsável pelo apoio às ações de mobilidade urbana e orientação viária.</p>
-        </div>
-
-        <div class="card">
-          <h3>IDAM</h3>
-          <p>Inspetoria de Defesa Ambiental, voltada à proteção ambiental e fiscalização de áreas protegidas.</p>
-        </div>
-
-        <div class="card">
-          <h3>ROMO</h3>
-          <p>Rondas Ostensivas com Motocicletas, equipe de patrulhamento ágil e deslocamento rápido.</p>
-        </div>
-
-        <div class="card">
-          <h3>IDMAS</h3>
-          <p>Inspetoria de Defesa da Mulher e Ações Sociais, voltada à proteção social e prevenção da violência.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">
-        <small>Identidade</small>
-        <h2>Brasão Institucional</h2>
-      </div>
-
-      <div class="brasao-box">
-        <img src="brasao-gcm.png" alt="Brasão da Guarda Civil Metropolitana">
-
-        <div>
-          <h3>Representação Institucional</h3>
-          <p>
-            O brasão representa a identidade, a tradição e os valores da Guarda Civil Metropolitana.
-            Ele simboliza o compromisso da corporação com a proteção, a ordem pública, a cidadania
-            e o serviço à população.
-          </p>
-          <br>
-          <p>
-            Sua presença no portal reforça o caráter institucional da página e a vinculação da corporação
-            às políticas municipais de segurança urbana.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">
-        <small>Evolução</small>
-        <h2>Linha do Tempo Institucional</h2>
-      </div>
-
-      <div class="timeline">
-        <div class="timeline-item">
-          <h3>Fundação e estruturação</h3>
-          <p>Criação e organização da corporação para atuação na proteção municipal e apoio à segurança urbana.</p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Ampliação das ações preventivas</h3>
-          <p>Expansão do patrulhamento preventivo, ações comunitárias e presença em áreas estratégicas.</p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Criação de unidades especializadas</h3>
-          <p>Estruturação de grupamentos e inspetorias com atuação específica em áreas táticas, sociais e ambientais.</p>
-        </div>
-
-        <div class="timeline-item">
-          <h3>Modernização institucional</h3>
-          <p>Adoção de novas ferramentas, canais digitais, comunicação pública e integração com a comunidade.</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h3>Guarda Civil Metropolitana</h3>
-        <p>Secretaria Municipal de Segurança Urbana.</p>
-        <p>Portal institucional comunitário inspirado na Guarda Civil Metropolitana de São Paulo.</p>
-      </div>
-
-      <div>
-        <h3>Links</h3>
-        <a href="index.html">Início</a>
-        <a href="institucional.html">Institucional</a>
-        <a href="index.html#operacoes">Operações</a>
-        <a href="index.html#programas">Programas</a>
-        <a href="index.html#transparencia">Transparência</a>
-      </div>
-
-      <div>
-        <h3>Redes</h3>
-        <a href="https://www.instagram.com/gcmsp_official/" target="_blank">Instagram</a>
-        <a href="https://www.youtube.com/@gcmspoficialvirtual" target="_blank">YouTube</a>
-        <a href="index.html#comunidade">Discord</a>
-      </div>
-    </div>
-
-    <div class="copyright">
-      © 2026 Portal GCM-SP. Desenvolvido para fins institucionais.
-    </div>
-  </footer>
+<footer>
+  <p>© 2026 Portal Institucional — Todos os direitos reservados.</p>
+</footer>
 
 </body>
 </html>
