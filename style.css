@@ -22,7 +22,9 @@ body {
   gap: 15px;
   padding: 20px 45px;
 }
-
+.logo-area {
+  flex-wrap: wrap;
+}
 .brasao {
   width: 65px;
   height: 65px;
@@ -38,7 +40,8 @@ body {
 
 .logo-area h1 {
   font-size: 24px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .logo-area p {
@@ -293,38 +296,85 @@ footer {
   background: #a80000;
 }
 
-.discord-area {
-  background: #fff;
-  padding: 45px;
-  text-align: center;
+/* ===== DISCORD ===== */
+
+.discord-section {
+  background: #f1f1f1;
+  padding: 50px 45px;
 }
 
-.discord-area h2 {
-  margin-bottom: 10px;
-  border-left: 5px solid #d60000;
-  padding-left: 12px;
+.discord-card {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #202225;
+  color: white;
+  border-radius: 12px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.25);
+  border-top: 4px solid #5865f2;
+}
+
+.discord-info {
+  flex: 1;
+}
+
+.discord-tag {
   display: inline-block;
+  background: #5865f2;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
 }
 
-.discord-area p {
-  margin: 15px 0 25px;
+.discord-info h2 {
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
-.discord-area iframe {
+.discord-info p {
+  color: #d7d7d7;
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.discord-btn {
+  display: inline-block;
+  background: #5865f2;
+  color: white;
+  padding: 14px 24px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.discord-btn:hover {
+  background: #4752c4;
+  transform: translateY(-2px);
+}
+
+.discord-frame iframe {
+  border-radius: 10px;
   max-width: 100%;
-  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.35);
 }
 
-.discord-widget {
-    background: white;
-    padding: 40px;
+@media (max-width: 850px) {
+  .discord-card {
+    flex-direction: column;
     text-align: center;
-}
+  }
 
-.discord-widget h2 {
-    margin-bottom: 20px;
-}
-
-.discord-widget iframe {
-    border-radius: 10px;
+  .discord-frame iframe {
+    width: 100%;
+    max-width: 350px;
+  }
 }
