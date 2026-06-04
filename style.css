@@ -384,3 +384,85 @@ footer {
     max-width: 350px;
   }
 }
+
+/* ===== PÁGINA INSTITUCIONAL COM MENU LATERAL ===== */
+
+.pagina-institucional {
+  max-width: 980px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+}
+
+.menu-lateral {
+  border: 1px solid #ccc;
+  align-self: start;
+}
+
+.menu-lateral a {
+  display: block;
+  padding: 11px 12px;
+  color: #333;
+  text-decoration: none;
+  font-size: 13px;
+  border-bottom: 1px solid #ddd;
+  background: #f7f7f7;
+}
+
+.menu-lateral a:hover,
+.menu-lateral a.ativo {
+  background: #003f85;
+  color: white;
+  font-weight: bold;
+}
+
+.conteudo-institucional {
+  padding: 0 0 30px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.conteudo-institucional h2 {
+  color: #0057b8;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.foto-institucional {
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  background: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+
+.conteudo-institucional h3 {
+  color: #111;
+  margin: 18px 0 8px;
+  font-size: 20px;
+  border-left: 4px solid #f4c400;
+  padding-left: 8px;
+}
+
+.conteudo-institucional p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 800px) {
+  .pagina-institucional {
+    grid-template-columns: 1fr;
+    margin: 20px;
+  }
+}
