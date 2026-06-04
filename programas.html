@@ -1,1 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal GCM-SP</title>
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .topbar {
+      background: #2b2b2b;
+      color: #fff;
+      padding: 10px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      border-bottom: 3px solid #004aad;
+    }
+    .prefeitura-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .prefeitura-logo {
+      height: 30px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+    
+    .social a {
+      margin-left: 14px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    header {
+      background: #111827;
+      color: #fff;
+      padding: 24px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    
+  .logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+  max-width: 70px;
+  max-height: 70px;
+}
+    .brand h1 {
+      font-size: 25px;
+      line-height: 1.1;
+    }
+
+    .brand p {
+      font-size: 12px;
+      color: #d1d5db;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      background: #0b2a55;
+      color: #fff;
+      padding: 0 6%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+
+    nav a {
+      padding: 15px 18px;
+      font-size: 14px;
+      font-weight: bold;
+      border-left: 1px solid rgba(255,255,255,0.12);
+    }
+
+    nav a:hover {
+      background: #004aad;
+    }
+
+    .hero {
+      min-height: 520px;
+      background:
+        linear-gradient(rgba(0,0,0,.72), rgba(0,0,0,.72)),
+        url("https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 70px 6%;
+    }
+
+    .hero-content {
+      max-width: 780px;
+    }
+
+    .tag {
+      display: inline-block;
+      border: 1px solid #004aad;
+      color: #fff;
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      background: rgba(215,25,32,.15);
+    }
+
+    .hero h2 {
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1;
+      margin-bottom: 22px;
+      text-transform: uppercase;
+    }
+
+    .hero h2 span {
+      color: #004aad;
+    }
+
+    .hero p {
+      font-size: 19px;
+      max-width: 680px;
+      color: #e5e7eb;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #004aad;
+      color: #fff;
+      padding: 13px 22px;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-right: 10px;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      background: #a90f15;
+      transform: translateY(-2px);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid #fff;
+    }
+
+    section {
+      padding: 70px 6%;
+    }
+
+    .section-title {
+      margin-bottom: 30px;
+      border-left: 4px solid #004aad;
+      padding-left: 14px;
+    }
+
+    .section-title small {
+      color: #004aad;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section-title h2 {
+      font-size: 34px;
+      color: #111827;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 26px;
+      border-radius: 6px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+      border-top: 4px solid #0b2a55;
+      transition: .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-top-color: #004aad;
+    }
+
+    .card h3 {
+      color: #0b2a55;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      color: #4b5563;
+      font-size: 15px;
+    }
+
+    .dark {
+      background: #111827;
+      color: #fff;
+    }
+
+    .dark .section-title h2 {
+      color: #fff;
+    }
+
+    .dark .card {
+      background: #1f2937;
+      color: #fff;
+      border-top-color: #e5b634;
+    }
+
+    .dark .card h3 {
+      color: #fff;
+    }
+
+    .dark .card p {
+      color: #d1d5db;
+    }
+
+    .news-card {
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    .news-img {
+      height: 160px;
+      background: linear-gradient(135deg, #0b2a55, #004aad);
+    }
+
+    .news-content {
+      padding: 22px;
+    }
+
+    .date {
+      color: #004aad;
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .discord-box {
+      background: linear-gradient(135deg, #5865f2, #232946);
+      color: #fff;
+      border-radius: 10px;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 25px;
+      align-items: center;
+    }
+
+    .discord-box h2 {
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .discord-stats {
+      background: rgba(0,0,0,.25);
+      padding: 24px;
+      border-radius: 8px;
+    }
+
+    .discord-stats div {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,.18);
+      padding: 10px 0;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .contact-box {
+      background: #fff;
+      padding: 24px;
+      border-radius: 6px;
+      box-shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    footer {
+      background: #0b0f19;
+      color: #fff;
+      padding: 40px 6%;
+      border-top: 4px solid #004aad;
+    }
+
+    footer .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 14px;
+      color: #fff;
+    }
+
+    footer p, footer a {
+      color: #d1d5db;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.12);
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 800px) {
+      header, .topbar {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      nav a {
+        padding: 12px;
+        font-size: 13px;
+      }
+
+      .discord-box,
+      .contact,
+      footer .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+   <div class="prefeitura-info">
+  <img src="prefeitura-sp.png" alt="Prefeitura de São Paulo" class="prefeitura-logo">
+  <span>Prefeitura do Município de São Paulo • Portal Institucional</span>
+  </div>
+    <div class="social">
+      <a href="https://www.instagram.com/gcmsp_official/" target="_blank">Instagram</a>
+      <a href="https://www.youtube.com/@gcmspoficialvirtual" target="_blank">YouTube</a>
+      <a href="#comunidade">Discord</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="brand">
+      <img src="brasao-gcm.png" alt="Brasão GCM-SP" class="logo">
+      <div>
+        <h1>Guarda Civil Metropolitana</h1>
+        <p>Secretaria Municipal de Segurança Urbana</p>
+      </div>
+    </div>
+    <strong>Emergência: 153</strong>
+  </header>
+
+  <nav>
+  <a href="programas.html">Programas</a>
+  </nav>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-content">
+        <span class="tag">Portal Institucional</span>
+        <h2>Guarda Civil <span>Metropolitana</span> de São Paulo</h2>
+        <p>
+          Proteção, prevenção e compromisso com a população paulistana.
+          Servindo a cidade com presença, responsabilidade e integração comunitária.
+        </p>
+        <a class="btn" href="#institucional">Conheça a GCM-SP</a>
+        <a class="btn secondary" href="#contato">Fale Conosco</a>
+      </div>
+    </section>
+
+    <section id="institucional">
+      <div class="section-title">
+        <small>Institucional</small>
+        <h2>Sobre a Corporação</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Missão</h3>
+          <p>Atuar na proteção preventiva da população, dos bens, serviços e instalações municipais.</p>
+        </div>
+
+        <div class="card">
+          <h3>Visão</h3>
+          <p>Ser referência em segurança urbana, proximidade comunitária e atuação integrada no município.</p>
+        </div>
+
+        <div class="card">
+          <h3>Valores</h3>
+          <p>Ética, disciplina, respeito, transparência, cidadania e compromisso com o serviço público.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="operacoes">
+      <div class="section-title">
+        <small>Unidades</small>
+        <h2>Unidades Especializada</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>ROMU - Rondas Ostensivas Municipal</h3>
+          <p>Patrulhamento tático especializado voltado para ações preventivas e ocorrências de maior complexidade.</p>
+        </div>
+
+        <div class="card">
+          <h3>DITRAN - Divisão de Trânsito</h3>
+          <p>Apoio às ações de mobilidade urbana, fiscalização e orientação do trânsito municipal.</p>
+        </div>
+
+        <div class="card">
+          <h3>IDAM - Inspetoria de Defesa Ambiental</h3>
+          <p>Proteção ambiental, fiscalização de áreas protegidas, combate a crimes ambientais e preservação dos recursos naturais.</p>
+        </div>
+
+        <div class="card">
+          <h3>ROMO - Rondas Ostensivas com Motocicletas</h3>
+          <p>Equipe especializada em patrulhamento ágil e deslocamento rápido para atendimento de ocorrências.</p>
+        </div>
+
+        <div class="card">
+          <h3>IDMAS - Inspetoria de Defesa da Mulher e Ações Sociais</h3>
+          <p>Ações sociais, proteção à mulher, mediação de conflitos e programas preventivos junto à comunidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="programas">
+      <div class="section-title">
+        <small>Projetos</small>
+        <h2>Programas Institucionais</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="#programas">
+          <h3>Guardiã Maria da Penha</h3>
+          <p>Proteção e acompanhamento de mulheres vítimas de violência doméstica.</p>
+        </a>
+
+        <a class="card" href="#programas">
+          <h3>Segurança Escolar</h3>
+          <p>Ações preventivas, orientação e presença comunitária em unidades escolares.</p>
+        </a>
+
+        <a class="card" href="#programas">
+          <h3>Proteção Ambiental</h3>
+          <p>Fiscalização e preservação de áreas verdes, parques e recursos ambientais.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="noticias">
+      <div class="section-title">
+        <small>Comunicação</small>
+        <h2>Últimas Notícias</h2>
+      </div>
+
+      <div class="grid">
+        <article class="news-card">
+          <div class="news-img"></div>
+          <div class="news-content">
+            <div class="date">02/06</div>
+            <h3>Operação preventiva reforça segurança em áreas estratégicas</h3>
+            <p>Ações integradas ampliam a presença da GCM em pontos de grande circulação.</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-img"></div>
+          <div class="news-content">
+            <div class="date">28/05</div>
+            <h3>Programa comunitário aproxima a corporação da população</h3>
+            <p>Iniciativas sociais fortalecem o diálogo entre agentes e moradores.</p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <div class="news-img"></div>
+          <div class="news-content">
+            <div class="date">20/05</div>
+            <h3>Guarda Ambiental intensifica fiscalização em parques urbanos</h3>
+            <p>Ações buscam preservar áreas públicas e combater infrações ambientais.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="dark" id="transparencia">
+      <div class="section-title">
+        <small>Acesso Público</small>
+        <h2>Transparência</h2>
+      </div>
+
+      <div class="grid">
+        <a class="card" href="#transparencia">
+          <h3>Relatórios</h3>
+          <p>Relatórios institucionais, indicadores operacionais e dados de atividades.</p>
+        </a>
+
+        <a class="card" href="#transparencia">
+          <h3>Contratos</h3>
+          <p>Informações sobre contratos, convênios e parcerias institucionais.</p>
+        </a>
+
+        <a class="card" href="#transparencia">
+          <h3>Licitações</h3>
+          <p>Consulta de processos licitatórios em andamento e concluídos.</p>
+        </a>
+
+        <a class="card" href="#transparencia">
+          <h3>Prestação de Contas</h3>
+          <p>Informações orçamentárias, demonstrativos e documentos públicos.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="comunidade">
+      <div class="discord-box">
+        <div>
+          <h2>Comunidade Discord</h2>
+          <p>
+            Espaço para comunicação, avisos, integração comunitária e acompanhamento das informações da corporação.
+          </p>
+          <br />
+         <a class="btn" href="https://discord.gg/tEqucstfMV" target="_blank">Entrar no servidor</a>
+        </div>
+
+        <div class="discord-stats">
+          <div><span>Status</span><strong>Online</strong></div>
+          <div><span>Membros online</span><strong>Em breve</strong></div>
+          <div><span>Total de membros</span><strong>Em breve</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="section-title">
+        <small>Atendimento</small>
+        <h2>Fale Conosco</h2>
+      </div>
+
+      <div class="contact">
+        <div class="contact-box">
+          <h3>Canais de Atendimento</h3>
+          <p><strong>Emergência:</strong> 153</p>
+          <p><strong>Ouvidoria:</strong> reclamações, elogios, sugestões e solicitações.</p>
+          <p><strong>Imprensa:</strong> Em breve</p>
+        </div>
+
+        <div class="contact-box">
+          <h3>Redes Oficiais</h3>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/gcmsp_official/" target="_blank">gcmsp_official</a></p>
+          <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@gcmspoficialvirtual" target="_blank">@gcmspoficialvirtual</a></p>
+          <p><strong>Facebook:</strong> Não informado</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h3>GCM-SP</h3>
+        <p>Guarda Civil Metropolitana de São Paulo.</p>
+        <p>Portal institucional não oficial em desenvolvimento.</p>
+      </div>
+
+      <div>
+        <h3>Links</h3>
+        <a href="#institucional">Institucional</a>
+        <a href="#operacoes">Operações</a>
+        <a href="#programas">Programas</a>
+        <a href="#transparencia">Transparência</a>
+      </div>
+
+      <div>
+        <h3>Redes</h3>
+        <a href="https://www.instagram.com/gcmsp_official/" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com/@gcmspoficialvirtual" target="_blank">YouTube</a>
+        <a href="#comunidade">Discord</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © 2026 Portal GCM-SP. Desenvolvido para fins institucionais.
+    </div>
+  </footer>
+
+</body>
+</html>
