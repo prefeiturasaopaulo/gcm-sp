@@ -14,38 +14,45 @@ body {
   background: #2f2f31;
   border-bottom: 3px solid #d60000;
   color: white;
+  min-height: 120px;
 }
 
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 20px 45px;
-  flex-wrap: wrap;
+  gap: 18px;
+  padding: 18px 45px;
+  flex-wrap: nowrap;
 }
+
 .brasao {
   width: 80px;
   height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  overflow: hidden;
 }
 
 .brasao img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
 }
 
 .logo-area h1 {
-  font-size: 24px;
+  font-size: 22px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  line-height: 1.1;
 }
 
 .logo-area p {
   font-size: 13px;
   color: #ddd;
+  margin-top: 5px;
 }
 
 nav {
