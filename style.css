@@ -466,3 +466,14 @@ footer {
     margin: 20px;
   }
 }
+
+
+.institucional h3 a {
+  color: #0057b8;
+  text-decoration: none;
+}
+
+.institucional h3 a:hover {
+  color: #003f85;
+  text-decoration: underline;
+}
