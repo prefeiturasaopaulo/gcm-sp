@@ -512,3 +512,14 @@ footer {
 .status-erro {
   color: #b00020;
 }
+
+.organograma-img {
+  width: 100%;
+  max-width: 1200px;
+  display: block;
+  margin: 25px auto;
+  background: white;
+  border: 1px solid #dcdcdc;
+  padding: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
