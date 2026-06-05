@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistente Virtual GCM</title>
+<link rel="stylesheet" href="style.css">
 
+<style>
+
+.chat-container{
+    max-width:900px;
+    margin:40px auto;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 3px 15px rgba(0,0,0,0.15);
+}
+
+.chat-header{
+    background:#0057b8;
+    color:white;
+    padding:20px;
+}
+
+.chat-header h2{
+    margin:0;
+}
+
+.chat-box{
+    height:500px;
+    overflow-y:auto;
+    padding:20px;
+    background:#f7f7f7;
+}
+
+.mensagem{
+    margin-bottom:15px;
+    padding:12px;
+    border-radius:8px;
+}
+
+.usuario{
+    background:#0057b8;
+    color:white;
+    margin-left:100px;
+}
+
+.bot{
+    background:#e8e8e8;
+    margin-right:100px;
+}
+
+.chat-input{
+    display:flex;
+    border-top:1px solid #ddd;
+}
+
+.chat-input input{
+    flex:1;
+    padding:15px;
+    border:none;
+    font-size:15px;
+}
+
+.chat-input button{
+    width:150px;
+    border:none;
+    background:#0057b8;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.chat-input button:hover{
+    background:#003f85;
+}
+
+</style>
+
+</head>
+<body>
+
+<header class="topo">
+  <div class="logo-area">
+    <div class="brasao">
+      <img src="brasao-gcm.png" alt="Brasão GCM">
+    </div>
+
+    <div>
+      <h1>PORTAL INSTITUCIONAL - GUARDA CIVIL METROPOLITANA</h1>
+      <p>Secretaria Municipal de Segurança Urbana</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">INÍCIO</a>
+    <a href="institucional.html">INSTITUCIONAL</a>
+    <a href="servicos.html">SERVIÇOS</a>
+    <a href="comunidade.html">COMUNIDADE</a>
+    <a href="assistente.html">ASSISTENTE</a>
+    <a href="fale-conosco.html">FALE CONOSCO</a>
+  </nav>
+</header>
+
+<section class="pagina-titulo">
+    <h2>Assistente Virtual GCM</h2>
+    <p>Tire dúvidas sobre a corporação e os serviços disponíveis.</p>
+</section>
+
+<div class="chat-container">
+
+    <div class="chat-header">
+        <h2>🤖 Assistente Virtual</h2>
+    </div>
+
+    <div id="chat" class="chat-box">
+
+        <div class="mensagem bot">
+            Olá. Sou o Assistente Virtual da Guarda Civil Metropolitana.
+            Como posso ajudar?
+        </div>
+
+    </div>
+
+    <div class="chat-input">
+        <input type="text" id="pergunta" placeholder="Digite sua pergunta...">
+        <button onclick="responder()">Enviar</button>
+    </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Portal Institucional — Todos os direitos reservados.</p>
+</footer>
+
+<script>
+
+function responder(){
+
+    let pergunta = document.getElementById("pergunta").value;
+    let chat = document.getElementById("chat");
+
+    if(pergunta.trim() === ""){
+        return;
+    }
+
+    chat.innerHTML += `
+    <div class="mensagem usuario">
+        ${pergunta}
+    </div>
+    `;
+
+    let texto = pergunta.toLowerCase();
+    let resposta = "Desculpe, não encontrei informações sobre esse assunto. Entre em contato pela Central de Atendimento.";
+
+    if(texto.includes("discord")){
+        resposta = "Você pode acessar nossa comunidade através da aba Comunidade.";
+    }
+
+    else if(texto.includes("base")){
+        resposta = "As bases operacionais podem ser consultadas na área Institucional > Bases Operacionais.";
+    }
+
+    else if(texto.includes("recrutamento")){
+        resposta = "Os processos seletivos são divulgados pela equipe administrativa através do Discord oficial.";
+    }
+
+    else if(texto.includes("ouvidoria")){
+        resposta = "Solicitações de Ouvidoria podem ser encaminhadas pela Central de Atendimento.";
+    }
+
+    else if(texto.includes("corregedoria")){
+        resposta = "Demandas relacionadas à Corregedoria devem ser registradas na Central de Atendimento.";
+    }
+
+    else if(texto.includes("serviços")){
+        resposta = "Os serviços disponíveis podem ser consultados na aba Serviços.";
+    }
+
+    else if(texto.includes("história")){
+        resposta = "A história da corporação está disponível na área Institucional.";
+    }
+
+    else if(texto.includes("comandante")){
+        resposta = "As informações de comando podem ser consultadas no Organograma Institucional.";
+    }
+
+    chat.innerHTML += `
+    <div class="mensagem bot">
+        ${resposta}
+    </div>
+    `;
+
+    document.getElementById("pergunta").value = "";
+
+    chat.scrollTop = chat.scrollHeight;
+}
+
+</script>
+
+</body>
+</html>
