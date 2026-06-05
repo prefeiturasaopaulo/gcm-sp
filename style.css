@@ -919,3 +919,57 @@ funcao-item {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.discord-home {
+  background: #f5f6f8;
+  padding: 45px 12%;
+}
+
+.discord-home h2 {
+  border-left: 5px solid #f4c400;
+  padding-left: 12px;
+  margin-bottom: 25px;
+}
+
+.discord-home-card {
+  background: #102b5c;
+  color: white;
+  border-radius: 10px;
+  padding: 35px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+}
+
+.discord-home-info span {
+  display: inline-block;
+  background: #f4c400;
+  color: #111;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.discord-home-info h3 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.discord-home-info p {
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.discord-home-frame iframe {
+  width: 100%;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .discord-home-card {
+    grid-template-columns: 1fr;
+  }
+}
