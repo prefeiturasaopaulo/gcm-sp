@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Concurso - GCM</title>
+  <title>Processo Seletivo - GCM</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,8 +32,8 @@
 </header>
 
 <section class="pagina-titulo">
-  <h2>Concurso Público GCM</h2>
-  <p>Processo seletivo fictício para ingresso na Guarda Civil Metropolitana em ambiente de roleplay.</p>
+  <h2>Processo Seletivo GCM</h2>
+  <p>Ingresso na Guarda Civil Metropolitana.</p>
 </section>
 
 <main class="institucional">
@@ -42,29 +42,32 @@
     <h3>Inscrições Abertas</h3>
     <p>
       Estão abertas as inscrições para ingresso na Guarda Civil Metropolitana.
-      O processo seletivo é destinado exclusivamente ao ambiente de roleplay.
+      Os candidatos deverão preencher a ficha cadastral e aguardar análise da equipe responsável.
     </p>
   </section>
 
   <section>
     <h3>Requisitos</h3>
     <ul>
-      <li>Ter passaporte ativo no servidor.</li>
-      <li>Possuir Discord ativo.</li>
-      <li>Ter disponibilidade para treinamentos e patrulhamentos.</li>
-      <li>Conhecer as regras básicas da cidade.</li>
-      <li>Manter conduta respeitosa e disciplinada.</li>
+      <li>Ser brasileiro nato ou naturalizado.</li>
+      <li>Possuir idade mínima de 18 anos.</li>
+      <li>Estar em pleno gozo dos direitos civis e políticos.</li>
+      <li>Não possuir antecedentes incompatíveis com o exercício da função pública.</li>
+      <li>Demonstrar conduta ética, disciplinada e compatível com os princípios institucionais.</li>
+      <li>Possuir disponibilidade para treinamentos, capacitações e escalas operacionais.</li>
+      <li>Apresentar boa capacidade de comunicação e trabalho em equipe.</li>
     </ul>
   </section>
 
   <section>
-    <h3>Etapas do Processo</h3>
+    <h3>Etapas do Processo Seletivo</h3>
     <ul>
-      <li>Inscrição inicial.</li>
-      <li>Análise da ficha.</li>
-      <li>Entrevista no Discord.</li>
-      <li>Treinamento básico.</li>
-      <li>Avaliação final.</li>
+      <li>Inscrição e envio da ficha cadastral.</li>
+      <li>Análise documental e verificação de requisitos.</li>
+      <li>Entrevista individual com a equipe de recrutamento.</li>
+      <li>Avaliação de conhecimentos institucionais.</li>
+      <li>Curso de Formação Inicial.</li>
+      <li>Homologação do resultado final.</li>
     </ul>
   </section>
 
@@ -73,23 +76,29 @@
 
     <form class="formulario" id="form-concurso">
 
-      <label>Nome do Personagem</label>
-      <input type="text" id="nome" placeholder="Digite o nome do personagem" required>
+      <label>Nome Completo</label>
+      <input type="text" id="nome" placeholder="Digite seu nome completo" required>
 
       <label>Passaporte</label>
-      <input type="text" id="passaporte" placeholder="Digite seu passaporte" required>
+      <input type="text" id="passaporte" placeholder="Número do passaporte" required>
 
       <label>Discord</label>
       <input type="text" id="discord" placeholder="Exemplo: @usuario" required>
 
-      <label>Telefone RP</label>
-      <input type="text" id="telefone" placeholder="Digite seu telefone RP" required>
+      <label>Telefone</label>
+      <input type="text" id="telefone" placeholder="Telefone de contato" required>
 
-      <label>Experiência em corporações</label>
+      <label>Data de Nascimento</label>
+      <input type="date" id="nascimento" required>
+
+      <label>Escolaridade</label>
+      <input type="text" id="escolaridade" placeholder="Exemplo: Ensino médio completo" required>
+
+      <label>Experiência Profissional</label>
       <textarea id="experiencia" placeholder="Descreva sua experiência anterior, caso tenha." required></textarea>
 
-      <label>Por que deseja ingressar na GCM?</label>
-      <textarea id="motivo" placeholder="Explique sua motivação para participar da corporação." required></textarea>
+      <label>Motivação para Ingresso</label>
+      <textarea id="motivacao" placeholder="Explique por que deseja ingressar na corporação." required></textarea>
 
       <button type="submit">Enviar Inscrição</button>
 
@@ -102,34 +111,34 @@
 
 <footer>
   <p>© 2026 Portal Institucional — Todos os direitos reservados.</p>
-  <p class="rodape-aviso">
-    Projeto fictício destinado exclusivamente a fins de entretenimento e roleplay.
-  </p>
 </footer>
 
 <script>
 document.getElementById("form-concurso").addEventListener("submit", async function(event) {
   event.preventDefault();
 
-  const webhookURL = "COLE_SEU_WEBHOOK_AQUI";
+  const webhookURL = "https://discord.com/api/webhooks/1512435627105194076/WKuwimwqDTDDCb9lMW1AmevC9K5aF27uXoV24otiLzVC9PFmvu2hng4K4iotXOUZz35l";
 
   const nome = document.getElementById("nome").value;
   const passaporte = document.getElementById("passaporte").value;
   const discord = document.getElementById("discord").value;
   const telefone = document.getElementById("telefone").value;
+  const nascimento = document.getElementById("nascimento").value;
+  const escolaridade = document.getElementById("escolaridade").value;
   const experiencia = document.getElementById("experiencia").value;
-  const motivo = document.getElementById("motivo").value;
+  const motivacao = document.getElementById("motivacao").value;
+
   const status = document.getElementById("status-envio");
 
   const payload = {
-    username: "Sistema de Concurso GCM",
+    username: "Sistema de Recrutamento GCM",
     embeds: [
       {
-        title: "📋 Nova Inscrição - Concurso GCM",
+        title: "📋 Nova Inscrição - Processo Seletivo GCM",
         color: 2195397,
         fields: [
           {
-            name: "👤 Nome do Personagem",
+            name: "👤 Nome Completo",
             value: nome,
             inline: false
           },
@@ -144,23 +153,38 @@ document.getElementById("form-concurso").addEventListener("submit", async functi
             inline: true
           },
           {
-            name: "📞 Telefone RP",
+            name: "📞 Telefone",
             value: telefone,
             inline: true
           },
           {
-            name: "🎖️ Experiência",
+            name: "📅 Data de Nascimento",
+            value: nascimento,
+            inline: true
+          },
+          {
+            name: "🎓 Escolaridade",
+            value: escolaridade,
+            inline: false
+          },
+          {
+            name: "💼 Experiência Profissional",
             value: experiencia,
             inline: false
           },
           {
-            name: "📝 Motivação",
-            value: motivo,
+            name: "📝 Motivação para Ingresso",
+            value: motivacao,
+            inline: false
+          },
+          {
+            name: "📌 Status",
+            value: "🟡 Aguardando análise do RH",
             inline: false
           }
         ],
         footer: {
-          text: "Portal Institucional GCM - Concurso RP"
+          text: "Portal Institucional GCM - Processo Seletivo"
         },
         timestamp: new Date().toISOString()
       }
@@ -177,15 +201,16 @@ document.getElementById("form-concurso").addEventListener("submit", async functi
     });
 
     if (resposta.ok) {
-      status.textContent = "Inscrição enviada com sucesso.";
+      status.textContent = "Inscrição enviada com sucesso. Aguarde análise da equipe responsável.";
       status.className = "status-sucesso";
       document.getElementById("form-concurso").reset();
     } else {
-      status.textContent = "Erro ao enviar inscrição.";
+      status.textContent = "Erro ao enviar inscrição. Verifique as informações e tente novamente.";
       status.className = "status-erro";
     }
+
   } catch (erro) {
-    status.textContent = "Erro de conexão.";
+    status.textContent = "Erro de conexão ao enviar inscrição.";
     status.className = "status-erro";
   }
 });
