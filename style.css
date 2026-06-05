@@ -575,10 +575,10 @@ footer {
   text-transform: uppercase;
 }
 
-.comando-card h4 {
-  color: #000;
-  font-size: 20px;
-  margin: 5px 0 10px;
+.comando-card h4{
+  margin: 5px 0;
+  color: #003f85;
+  font-size: 30px;
 }
 
 .comando-card p {
