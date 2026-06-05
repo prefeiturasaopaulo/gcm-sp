@@ -591,10 +591,10 @@ footer {
   background: white;
   border: 1px solid #d8dde6;
   border-radius: 7px;
-  padding: 25px;
+  padding: 20px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  grid-template-columns: 1fr;
+  gap: 12px;
 }
 
 .funcao-item {
