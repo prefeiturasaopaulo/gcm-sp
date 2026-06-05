@@ -618,3 +618,271 @@ funcao-item {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== HOME NOVA ===== */
+
+.hero-home {
+  min-height: 420px;
+  background:
+    linear-gradient(90deg, rgba(0, 34, 85, 0.95), rgba(0, 63, 133, 0.75)),
+    url("banner-gcm.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 70px 16%;
+}
+
+.hero-conteudo {
+  max-width: 720px;
+}
+
+.status-servidor {
+  display: inline-block;
+  color: #f4c400;
+  border: 1px solid #f4c400;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-home h2 {
+  font-size: 44px;
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.hero-home h2 strong {
+  color: #f4c400;
+}
+
+.hero-home p {
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-amarelo,
+.btn-outline,
+.btn-discord {
+  padding: 13px 22px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-amarelo {
+  background: #f4c400;
+  color: #111;
+}
+
+.btn-outline {
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-discord {
+  background: #5865f2;
+  color: white;
+}
+
+.indicadores {
+  background: #102b5c;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  padding: 20px 10%;
+}
+
+.indicadores h3 {
+  color: #f4c400;
+  font-size: 24px;
+}
+
+.indicadores p {
+  font-size: 13px;
+}
+
+.acesso-rapido,
+.noticias-home {
+  padding: 45px 12%;
+  background: #f5f6f8;
+}
+
+.acesso-rapido h2,
+.noticias-home h2 {
+  border-left: 5px solid #f4c400;
+  padding-left: 12px;
+  margin-bottom: 25px;
+}
+
+.atalhos-home {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+}
+
+.atalho-home {
+  background: white;
+  border: 1px solid #d8dde6;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #222;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.atalho-home:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+}
+
+.atalho-home span {
+  font-size: 30px;
+}
+
+.atalho-home h3 {
+  color: #003f85;
+  margin: 10px 0;
+}
+
+.atalho-home p {
+  font-size: 12px;
+}
+
+.titulo-linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titulo-linha a {
+  color: #003f85;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.noticias-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.noticias-cards article {
+  background: white;
+  border: 1px solid #d8dde6;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.noticia-capa {
+  background: #003f85;
+  color: #f4c400;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.noticias-cards article span {
+  display: inline-block;
+  margin: 15px 20px 5px;
+  font-size: 11px;
+  color: #0057b8;
+  font-weight: bold;
+}
+
+.noticias-cards article h3 {
+  margin: 0 20px 10px;
+  color: #111;
+}
+
+.noticias-cards article p {
+  margin: 0 20px 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.aviso-rp-home {
+  background: #fff3cd;
+  color: #856404;
+  padding: 16px 12%;
+  border-top: 1px solid #f4c400;
+  border-bottom: 1px solid #f4c400;
+  font-weight: bold;
+}
+
+.rodape-completo {
+  background: #102b5c;
+  color: white;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 30px;
+  padding: 45px 12%;
+  text-align: left;
+}
+
+.rodape-completo h3,
+.rodape-completo h4 {
+  color: #f4c400;
+  margin-bottom: 12px;
+}
+
+.rodape-completo a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.rodape-completo a:hover {
+  color: #f4c400;
+}
+
+/* Responsivo */
+
+@media (max-width: 1000px) {
+  .atalhos-home {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .noticias-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .indicadores {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-home {
+    padding: 45px 25px;
+  }
+
+  .hero-home h2 {
+    font-size: 32px;
+  }
+
+  .atalhos-home {
+    grid-template-columns: 1fr;
+  }
+
+  .rodape-completo {
+    grid-template-columns: 1fr;
+  }
+}
