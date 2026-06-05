@@ -597,12 +597,13 @@ footer {
   gap: 12px;
 }
 
-.funcao-item {
+funcao-item {
   background: #f8f9fb;
   color: #233047;
-  padding: 14px 16px;
+  padding: 14px 18px;
   border-radius: 6px;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .funcao-item::before {
