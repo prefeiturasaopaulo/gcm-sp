@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concurso - GCM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="logo-area">
+    <div class="brasao">
+      <img src="brasao-gcm.png" alt="Brasão GCM">
+    </div>
+
+    <div>
+      <h1>PORTAL INSTITUCIONAL - GUARDA CIVIL METROPOLITANA</h1>
+      <p>Secretaria Municipal de Segurança Urbana</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="index.html">INÍCIO</a>
+    <a href="institucional.html">INSTITUCIONAL</a>
+    <a href="autoridades.html">COMANDO GERAL</a>
+    <a href="concurso.html">CONCURSO</a>
+    <a href="servicos.html">SERVIÇOS</a>
+    <a href="comunidade.html">COMUNIDADE</a>
+    <a href="fale-conosco.html">FALE CONOSCO</a>
+  </nav>
+</header>
+
+<section class="pagina-titulo">
+  <h2>Concurso Público GCM</h2>
+  <p>Processo seletivo fictício para ingresso na Guarda Civil Metropolitana em ambiente de roleplay.</p>
+</section>
+
+<main class="institucional">
+
+  <section>
+    <h3>Inscrições Abertas</h3>
+    <p>
+      Estão abertas as inscrições para ingresso na Guarda Civil Metropolitana.
+      O processo seletivo é destinado exclusivamente ao ambiente de roleplay.
+    </p>
+  </section>
+
+  <section>
+    <h3>Requisitos</h3>
+    <ul>
+      <li>Ter passaporte ativo no servidor.</li>
+      <li>Possuir Discord ativo.</li>
+      <li>Ter disponibilidade para treinamentos e patrulhamentos.</li>
+      <li>Conhecer as regras básicas da cidade.</li>
+      <li>Manter conduta respeitosa e disciplinada.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Etapas do Processo</h3>
+    <ul>
+      <li>Inscrição inicial.</li>
+      <li>Análise da ficha.</li>
+      <li>Entrevista no Discord.</li>
+      <li>Treinamento básico.</li>
+      <li>Avaliação final.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Formulário de Inscrição</h3>
+
+    <form class="formulario" id="form-concurso">
+
+      <label>Nome do Personagem</label>
+      <input type="text" id="nome" placeholder="Digite o nome do personagem" required>
+
+      <label>Passaporte</label>
+      <input type="text" id="passaporte" placeholder="Digite seu passaporte" required>
+
+      <label>Discord</label>
+      <input type="text" id="discord" placeholder="Exemplo: @usuario" required>
+
+      <label>Telefone RP</label>
+      <input type="text" id="telefone" placeholder="Digite seu telefone RP" required>
+
+      <label>Experiência em corporações</label>
+      <textarea id="experiencia" placeholder="Descreva sua experiência anterior, caso tenha." required></textarea>
+
+      <label>Por que deseja ingressar na GCM?</label>
+      <textarea id="motivo" placeholder="Explique sua motivação para participar da corporação." required></textarea>
+
+      <button type="submit">Enviar Inscrição</button>
+
+    </form>
+
+    <p id="status-envio"></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Portal Institucional — Todos os direitos reservados.</p>
+  <p class="rodape-aviso">
+    Projeto fictício destinado exclusivamente a fins de entretenimento e roleplay.
+  </p>
+</footer>
+
+<script>
+document.getElementById("form-concurso").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const webhookURL = "COLE_SEU_WEBHOOK_AQUI";
+
+  const nome = document.getElementById("nome").value;
+  const passaporte = document.getElementById("passaporte").value;
+  const discord = document.getElementById("discord").value;
+  const telefone = document.getElementById("telefone").value;
+  const experiencia = document.getElementById("experiencia").value;
+  const motivo = document.getElementById("motivo").value;
+  const status = document.getElementById("status-envio");
+
+  const payload = {
+    username: "Sistema de Concurso GCM",
+    embeds: [
+      {
+        title: "📋 Nova Inscrição - Concurso GCM",
+        color: 2195397,
+        fields: [
+          {
+            name: "👤 Nome do Personagem",
+            value: nome,
+            inline: false
+          },
+          {
+            name: "🆔 Passaporte",
+            value: passaporte,
+            inline: true
+          },
+          {
+            name: "💬 Discord",
+            value: discord,
+            inline: true
+          },
+          {
+            name: "📞 Telefone RP",
+            value: telefone,
+            inline: true
+          },
+          {
+            name: "🎖️ Experiência",
+            value: experiencia,
+            inline: false
+          },
+          {
+            name: "📝 Motivação",
+            value: motivo,
+            inline: false
+          }
+        ],
+        footer: {
+          text: "Portal Institucional GCM - Concurso RP"
+        },
+        timestamp: new Date().toISOString()
+      }
+    ]
+  };
+
+  try {
+    const resposta = await fetch(webhookURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (resposta.ok) {
+      status.textContent = "Inscrição enviada com sucesso.";
+      status.className = "status-sucesso";
+      document.getElementById("form-concurso").reset();
+    } else {
+      status.textContent = "Erro ao enviar inscrição.";
+      status.className = "status-erro";
+    }
+  } catch (erro) {
+    status.textContent = "Erro de conexão.";
+    status.className = "status-erro";
+  }
+});
+</script>
+
+</body>
+</html>
