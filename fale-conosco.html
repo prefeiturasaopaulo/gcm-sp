@@ -23,6 +23,8 @@
   <nav>
     <a href="index.html">INÍCIO</a>
     <a href="institucional.html">INSTITUCIONAL</a>
+    <a href="autoridades.html">COMANDO GERAL</a>
+    <a href="concurso.html">CONCURSO</a>
     <a href="servicos.html">SERVIÇOS</a>
     <a href="comunidade.html">COMUNIDADE</a>
     <a href="fale-conosco.html">FALE CONOSCO</a>
@@ -37,10 +39,10 @@
 <main class="institucional">
 
   <section>
-    <h3>Atendimento via Discord</h3>
+    <h3>Atendimento Digital</h3>
     <p>
-      Preencha o formulário abaixo. A solicitação será enviada para a equipe responsável
-      por meio do canal interno do Discord.
+      Preencha o formulário abaixo. A solicitação será enviada para a equipe
+      responsável por meio dos canais internos da corporação.
     </p>
 
     <p class="aviso-rp">
@@ -57,7 +59,7 @@
       <input type="text" id="nome" placeholder="Digite seu nome" required>
 
       <label>Discord</label>
-      <input type="text" id="discord" placeholder="Exemplo: Gustavo#0000 ou @gustavo" required>
+      <input type="text" id="discord" placeholder="Exemplo: @usuario" required>
 
       <label>Tipo de Atendimento</label>
       <select id="tipo" required>
@@ -73,7 +75,7 @@
       <label>Mensagem</label>
       <textarea id="mensagem" placeholder="Descreva sua solicitação" required></textarea>
 
-      <button type="submit">Enviar solicitação</button>
+      <button type="submit">Enviar Solicitação</button>
 
     </form>
 
@@ -93,7 +95,7 @@
 document.getElementById("formulario-contato").addEventListener("submit", async function(event) {
   event.preventDefault();
 
-  const webhookURL = "https://discord.com/api/webhooks/1512264204420120765/BlcdaVsKB3tdyO58k00tnYOqBcW6UfjQKSbWpWJvi8wGojl54D_EbOlVObVCUl0jkknm";
+  const webhookURL = "COLE_AQUI_SUA_NOVA_WEBHOOK";
 
   const nome = document.getElementById("nome").value;
   const discord = document.getElementById("discord").value;
@@ -108,29 +110,13 @@ document.getElementById("formulario-contato").addEventListener("submit", async f
         title: "📨 Nova Solicitação pelo Site",
         color: 2195397,
         fields: [
-          {
-            name: "Nome",
-            value: nome || "Não informado",
-            inline: true
-          },
-          {
-            name: "Discord",
-            value: discord || "Não informado",
-            inline: true
-          },
-          {
-            name: "Tipo de Atendimento",
-            value: tipo || "Não informado",
-            inline: false
-          },
-          {
-            name: "Mensagem",
-            value: mensagem || "Não informado",
-            inline: false
-          }
+          { name: "Nome", value: nome || "Não informado", inline: true },
+          { name: "Discord", value: discord || "Não informado", inline: true },
+          { name: "Tipo de Atendimento", value: tipo || "Não informado", inline: false },
+          { name: "Mensagem", value: mensagem || "Não informado", inline: false }
         ],
         footer: {
-          text: "Portal Institucional GCM - Roleplay"
+          text: "Portal Institucional GCM - Atendimento"
         },
         timestamp: new Date().toISOString()
       }
@@ -151,7 +137,7 @@ document.getElementById("formulario-contato").addEventListener("submit", async f
       status.className = "status-sucesso";
       document.getElementById("formulario-contato").reset();
     } else {
-      status.textContent = "Erro ao enviar. Verifique o webhook.";
+      status.textContent = "Erro ao enviar solicitação.";
       status.className = "status-erro";
     }
   } catch (erro) {
