@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fale Conosco</title>
+  <title>Fale Conosco - GCM</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,9 +11,11 @@
 <header class="topo">
   <div class="logo-area">
     <div class="brasao">
-    <img src="brasao-gcm.png" alt="Brasão GCM">
+      <img src="brasao-gcm.png" alt="Brasão GCM">
+    </div>
+
     <div>
-      <h1>PORTAL INSTITUCIONAL - Guarda Civil Metropolitana</h1>
+      <h1>PORTAL INSTITUCIONAL - GUARDA CIVIL METROPOLITANA</h1>
       <p>Secretaria Municipal de Segurança Urbana</p>
     </div>
   </div>
@@ -28,40 +30,137 @@
 </header>
 
 <section class="pagina-titulo">
-  <h2>Fale Conosco</h2>
-  <p>Entre em contato com a equipe institucional.</p>
-  <p>Este canal é destinado exclusivamente ao ambiente de roleplay e não realiza atendimento real ao público.</p>
+  <h2>Central de Atendimento</h2>
+  <p>Envie uma solicitação para a equipe da Guarda Civil Metropolitana.</p>
 </section>
 
 <main class="institucional">
+
   <section>
-    <h3>Canais de Atendimento</h3>
-    <p><strong>Telefone:</strong> (00) 0000-0000</p>
-    <p><strong>E-mail:</strong> contato@portal.com</p>
-    <p><strong>Endereço:</strong> Rua Exemplo, 000 - Centro</p>
+    <h3>Atendimento via Discord</h3>
+    <p>
+      Preencha o formulário abaixo. A solicitação será enviada para a equipe responsável
+      por meio do canal interno do Discord.
+    </p>
+
+    <p class="aviso-rp">
+      Este portal é destinado exclusivamente ao ambiente de roleplay. Não possui vínculo oficial com órgãos públicos reais.
+    </p>
   </section>
 
   <section>
-    <h3>Formulário</h3>
+    <h3>Formulário de Solicitação</h3>
 
-    <form class="formulario">
+    <form class="formulario" id="formulario-contato">
+
       <label>Nome</label>
-      <input type="text" placeholder="Digite seu nome">
+      <input type="text" id="nome" placeholder="Digite seu nome" required>
 
-      <label>E-mail</label>
-      <input type="email" placeholder="Digite seu e-mail">
+      <label>Discord</label>
+      <input type="text" id="discord" placeholder="Exemplo: Gustavo#0000 ou @gustavo" required>
+
+      <label>Tipo de Atendimento</label>
+      <select id="tipo" required>
+        <option value="">Selecione uma opção</option>
+        <option value="Atendimento Geral">Atendimento Geral</option>
+        <option value="Dúvida">Dúvida</option>
+        <option value="Sugestão">Sugestão</option>
+        <option value="Denúncia RP">Denúncia RP</option>
+        <option value="Ouvidoria">Ouvidoria</option>
+        <option value="Corregedoria">Corregedoria</option>
+        <option value="Erro no Site">Erro no Site</option>
+      </select>
 
       <label>Mensagem</label>
-      <textarea placeholder="Digite sua mensagem"></textarea>
+      <textarea id="mensagem" placeholder="Descreva sua solicitação" required></textarea>
 
-      <button type="submit">Enviar mensagem</button>
+      <button type="submit">Enviar solicitação</button>
+
     </form>
+
+    <p id="status-envio"></p>
   </section>
+
 </main>
 
 <footer>
   <p>© 2026 Portal Institucional — Todos os direitos reservados.</p>
+  <p class="rodape-aviso">
+    Projeto fictício destinado exclusivamente a fins de entretenimento e roleplay.
+  </p>
 </footer>
+
+<script>
+document.getElementById("formulario-contato").addEventListener("submit", async function(event) {
+  event.preventDefault();
+
+  const webhookURL = "COLE_SEU_WEBHOOK_AQUI";
+
+  const nome = document.getElementById("nome").value;
+  const discord = document.getElementById("discord").value;
+  const tipo = document.getElementById("tipo").value;
+  const mensagem = document.getElementById("mensagem").value;
+  const status = document.getElementById("status-envio");
+
+  const payload = {
+    username: "Portal GCM",
+    embeds: [
+      {
+        title: "📨 Nova Solicitação pelo Site",
+        color: 2195397,
+        fields: [
+          {
+            name: "Nome",
+            value: nome || "Não informado",
+            inline: true
+          },
+          {
+            name: "Discord",
+            value: discord || "Não informado",
+            inline: true
+          },
+          {
+            name: "Tipo de Atendimento",
+            value: tipo || "Não informado",
+            inline: false
+          },
+          {
+            name: "Mensagem",
+            value: mensagem || "Não informado",
+            inline: false
+          }
+        ],
+        footer: {
+          text: "Portal Institucional GCM - Roleplay"
+        },
+        timestamp: new Date().toISOString()
+      }
+    ]
+  };
+
+  try {
+    const resposta = await fetch(webhookURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (resposta.ok) {
+      status.textContent = "Solicitação enviada com sucesso.";
+      status.className = "status-sucesso";
+      document.getElementById("formulario-contato").reset();
+    } else {
+      status.textContent = "Erro ao enviar. Verifique o webhook.";
+      status.className = "status-erro";
+    }
+  } catch (erro) {
+    status.textContent = "Erro de conexão ao enviar.";
+    status.className = "status-erro";
+  }
+});
+</script>
 
 </body>
 </html>
