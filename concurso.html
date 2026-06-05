@@ -48,6 +48,7 @@
 
   <section>
     <h3>Requisitos</h3>
+
     <ul>
       <li>Ser brasileiro nato ou naturalizado.</li>
       <li>Possuir idade mínima de 18 anos.</li>
@@ -57,10 +58,12 @@
       <li>Possuir disponibilidade para treinamentos, capacitações e escalas operacionais.</li>
       <li>Apresentar boa capacidade de comunicação e trabalho em equipe.</li>
     </ul>
+
   </section>
 
   <section>
     <h3>Etapas do Processo Seletivo</h3>
+
     <ul>
       <li>Inscrição e envio da ficha cadastral.</li>
       <li>Análise documental e verificação de requisitos.</li>
@@ -69,9 +72,11 @@
       <li>Curso de Formação Inicial.</li>
       <li>Homologação do resultado final.</li>
     </ul>
+
   </section>
 
   <section>
+
     <h3>Formulário de Inscrição</h3>
 
     <form class="formulario" id="form-concurso">
@@ -88,23 +93,20 @@
       <label>Telefone</label>
       <input type="text" id="telefone" placeholder="Telefone de contato" required>
 
-      <label>Data de Nascimento</label>
-      <input type="date" id="nascimento" required>
-
-      <label>Escolaridade</label>
-      <input type="text" id="escolaridade" placeholder="Exemplo: Ensino médio completo" required>
-
       <label>Experiência Profissional</label>
-      <textarea id="experiencia" placeholder="Descreva sua experiência anterior, caso tenha." required></textarea>
+      <textarea id="experiencia" placeholder="Descreva sua experiência anterior." required></textarea>
 
       <label>Motivação para Ingresso</label>
       <textarea id="motivacao" placeholder="Explique por que deseja ingressar na corporação." required></textarea>
 
-      <button type="submit">Enviar Inscrição</button>
+      <button type="submit">
+        Enviar Inscrição
+      </button>
 
     </form>
 
     <p id="status-envio"></p>
+
   </section>
 
 </main>
@@ -114,84 +116,89 @@
 </footer>
 
 <script>
+
 document.getElementById("form-concurso").addEventListener("submit", async function(event) {
+
   event.preventDefault();
 
-  const webhookURL = "https://discord.com/api/webhooks/1512435627105194076/WKuwimwqDTDDCb9lMW1AmevC9K5aF27uXoV24otiLzVC9PFmvu2hng4K4iotXOUZz35l";
+  const webhookURL = "COLE_SEU_WEBHOOK_AQUI";
 
   const nome = document.getElementById("nome").value;
   const passaporte = document.getElementById("passaporte").value;
   const discord = document.getElementById("discord").value;
   const telefone = document.getElementById("telefone").value;
-  const nascimento = document.getElementById("nascimento").value;
-  const escolaridade = document.getElementById("escolaridade").value;
   const experiencia = document.getElementById("experiencia").value;
   const motivacao = document.getElementById("motivacao").value;
 
   const status = document.getElementById("status-envio");
 
   const payload = {
+
     username: "Sistema de Recrutamento GCM",
+
     embeds: [
       {
         title: "📋 Nova Inscrição - Processo Seletivo GCM",
+
         color: 2195397,
+
         fields: [
+
           {
             name: "👤 Nome Completo",
             value: nome,
             inline: false
           },
+
           {
             name: "🆔 Passaporte",
             value: passaporte,
             inline: true
           },
+
           {
             name: "💬 Discord",
             value: discord,
             inline: true
           },
+
           {
             name: "📞 Telefone",
             value: telefone,
             inline: true
           },
-          {
-            name: "📅 Data de Nascimento",
-            value: nascimento,
-            inline: true
-          },
-          {
-            name: "🎓 Escolaridade",
-            value: escolaridade,
-            inline: false
-          },
+
           {
             name: "💼 Experiência Profissional",
             value: experiencia,
             inline: false
           },
+
           {
             name: "📝 Motivação para Ingresso",
             value: motivacao,
             inline: false
           },
+
           {
             name: "📌 Status",
             value: "🟡 Aguardando análise do RH",
             inline: false
           }
+
         ],
+
         footer: {
-          text: "Portal Institucional GCM - Processo Seletivo"
+          text: "Portal Institucional GCM - Recrutamento"
         },
+
         timestamp: new Date().toISOString()
       }
     ]
   };
 
   try {
+
     const resposta = await fetch(webhookURL, {
       method: "POST",
       headers: {
@@ -201,20 +208,34 @@ document.getElementById("form-concurso").addEventListener("submit", async functi
     });
 
     if (resposta.ok) {
-      status.textContent = "Inscrição enviada com sucesso. Aguarde análise da equipe responsável.";
-      status.className = "status-sucesso";
+
+      status.textContent =
+      "Inscrição enviada com sucesso. Aguarde análise da equipe responsável.";
+
+      status.style.color = "green";
+
       document.getElementById("form-concurso").reset();
+
     } else {
-      status.textContent = "Erro ao enviar inscrição. Verifique as informações e tente novamente.";
-      status.className = "status-erro";
+
+      status.textContent =
+      "Erro ao enviar inscrição.";
+
+      status.style.color = "red";
     }
 
   } catch (erro) {
-    status.textContent = "Erro de conexão ao enviar inscrição.";
-    status.className = "status-erro";
+
+    status.textContent =
+    "Erro de conexão.";
+
+    status.style.color = "red";
   }
+
 });
+
 </script>
 
 </body>
 </html>
+```
