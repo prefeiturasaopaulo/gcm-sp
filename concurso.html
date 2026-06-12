@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Processo Seletivo - GCM</title>
+  <title>Processo Seletivo - PMESP</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,12 +11,12 @@
 <header class="topo">
   <div class="logo-area">
     <div class="brasao">
-      <img src="brasao-gcm.png" alt="Brasão GCM">
+      <img src="brasao-pm.png" alt="Brasão PMESP">
     </div>
 
     <div>
-      <h1>GUARDA CIVIL METROPOLITANA</h1>
-      <p>Secretaria Municipal de Segurança Urbana</p>
+      <h1>POLÍCIA MILITAR DO ESTADO DE SÃO PAULO</h1>
+      <p>Estado de São Paulo - Comando Geral</p>
     </div>
   </div>
 
@@ -32,8 +32,8 @@
 </header>
 
 <section class="pagina-titulo">
-  <h2>Processo Seletivo GCM</h2>
-  <p>Ingresso na Guarda Civil Metropolitana.</p>
+  <h2>Processo Seletivo PMESP</h2>
+  <p>Ingresso na Polícia Militar do Estado de São Paulo.</p>
 </section>
 
 <main class="institucional">
@@ -41,7 +41,7 @@
   <section>
     <h3>Inscrições Abertas</h3>
     <p>
-      Estão abertas as inscrições para ingresso na Guarda Civil Metropolitana.
+      Estão abertas as inscrições para ingresso na Polícia Militar do Estado de São Paulo.
       Os candidatos deverão preencher a ficha cadastral e aguardar análise da equipe responsável.
     </p>
   </section>
@@ -125,22 +125,22 @@ document.getElementById("form-concurso").addEventListener("submit", async functi
   const status = document.getElementById("status-envio");
 
   const payload = {
-    username: "Sistema de Recrutamento GCM",
+    Sistema de Recrutamento PMESP
     embeds: [
       {
-        title: "📋 Nova Inscrição - Processo Seletivo GCM",
-        color: 2195397,
+        title: "Nova Inscrição - Processo Seletivo PMESP",
+        color: 12653087,
         fields: [
-          { name: "👤 Nome Completo", value: nome, inline: false },
-          { name: "🆔 Passaporte", value: passaporte, inline: true },
-          { name: "💬 Discord", value: discord, inline: true },
-          { name: "📞 Telefone", value: telefone, inline: true },
-          { name: "💼 Experiência Profissional", value: experiencia, inline: false },
-          { name: "📝 Motivação para Ingresso", value: motivacao, inline: false },
-          { name: "📌 Status", value: "🟡 Aguardando análise do RH", inline: false }
+          { name: "Nome Completo", value: nome, inline: false },
+          { name: "Passaporte", value: passaporte, inline: true },
+          { name: "Discord", value: discord, inline: true },
+          { name: "Telefone", value: telefone, inline: true },
+          { name: "Experiência Profissional", value: experiencia, inline: false },
+          { name: "Motivação para Ingresso", value: motivacao, inline: false },
+          { name: "Status", value: "🟡 Aguardando análise do RH", inline: false }
         ],
         footer: {
-          text: "Portal Institucional GCM - Recrutamento"
+          text: "Portal Institucional PMESP - Recrutamento"
         },
         timestamp: new Date().toISOString()
       }
