@@ -11,8 +11,8 @@ body {
 }
 
 .topo {
-  background: #003f85;
-  border-bottom: 3px solid #f4c400;
+  background: #111111;
+  border-bottom: 3px solid #c1121f;
   color: white;
   min-height: 120px;
 }
@@ -56,7 +56,7 @@ body {
 }
 
 nav {
-  background: #0057b8;
+  background: #2a2a2a;
   display: flex;
   justify-content: flex-end;
   padding: 12px 45px;
@@ -71,7 +71,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #f4c400;
+  color: #c1121f;
 }
 
 .banner {
@@ -85,7 +85,7 @@ nav a:hover {
   align-items: center;
   padding-left: 70px;
   color: white;
-  border-bottom: 3px solid #0057b8;
+  border-bottom: 3px solid #2a2a2a;
 }
 
 .banner-texto {
@@ -104,7 +104,7 @@ nav a:hover {
 
 .botao {
   display: inline-block;
-  background:  #0057b8;
+  background:  #2a2a2a;
   color: white;
   padding: 13px 24px;
   text-decoration: none;
@@ -113,7 +113,7 @@ nav a:hover {
 }
 
 .botao:hover {
-  background: #003f85;
+  background: #111111;
 }
 
 .atalhos {
@@ -157,7 +157,7 @@ nav a:hover {
 
 .conteudo h2 {
   margin-bottom: 25px;
-  border-left: 5px solid #f4c400;
+  border-left: 5px solid #c1121f;
   padding-left: 12px;
 }
 
@@ -170,7 +170,7 @@ nav a:hover {
 .noticias article {
   background: #f5f5f5;
   padding: 25px;
-  border-top: 4px solid #f4c400;
+  border-top: 4px solid #c1121f;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
@@ -182,7 +182,7 @@ nav a:hover {
   background: #111;
   color: white;
   padding: 60px 45px;
-  border-bottom: 3px solid #0057b8;
+  border-bottom: 3px solid #2a2a2a;
 }
 
 .pagina-titulo h2 {
@@ -203,7 +203,7 @@ nav a:hover {
 }
 
 .institucional h3 {
-  color: #0057b8;
+  color: #2a2a2a;
   margin-bottom: 10px;
   font-size: 24px;
 }
@@ -291,7 +291,7 @@ footer {
 .formulario button {
   width: 180px;
   padding: 12px;
-  background: #0057b8;
+  background: #2a2a2a;
   color: white;
   border: none;
   font-weight: bold;
@@ -299,7 +299,7 @@ footer {
 }
 
 .formulario button:hover {
-  background: #003f85;
+  background: #111111;
 }
 
 /* ===== DISCORD ===== */
@@ -415,7 +415,7 @@ footer {
 
 .menu-lateral a:hover,
 .menu-lateral a.ativo {
-  background: #003f85;
+  background: #111111;
   color: white;
   font-weight: bold;
 }
@@ -431,7 +431,7 @@ footer {
 }
 
 .conteudo-institucional h2 {
-  color: #0057b8;
+  color: #2a2a2a;
   font-size: 24px;
   margin-bottom: 15px;
 }
@@ -450,7 +450,7 @@ footer {
   color: #111;
   margin: 18px 0 8px;
   font-size: 20px;
-  border-left: 4px solid #f4c400;
+  border-left: 4px solid #c1121f;
   padding-left: 8px;
 }
 
@@ -469,12 +469,12 @@ footer {
 
 
 .institucional h3 a {
-  color: #0057b8;
+  color: #2a2a2a;
   text-decoration: none;
 }
 
 .institucional h3 a:hover {
-  color: #003f85;
+  color: #111111;
   text-decoration: underline;
 }
 
@@ -490,7 +490,7 @@ footer {
   background: #fff3cd;
   color: #856404;
   padding: 12px;
-  border-left: 4px solid #f4c400;
+  border-left: 4px solid #c1121f;
   font-weight: bold;
 }
 
@@ -532,7 +532,7 @@ footer {
   color: #000;
   font-size: 22px;
   margin: 35px 0 25px;
-  border-left: 25px solid #f4c400;
+  border-left: 25px solid #c1121f;
   padding-left: 10px;
   text-transform: uppercase;
 }
@@ -557,7 +557,7 @@ footer {
   width: 60px;
   height: 60px;
   background: #071c50;
-  color: #f4c400;
+  color: #c1121f;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -576,7 +576,7 @@ footer {
 
 .comando-card h4{
   margin: 5px 0;
-  color: #003f85;
+  color: #111111;
   font-size: 30px;
 }
 
@@ -607,7 +607,7 @@ funcao-item {
 
 .funcao-item::before {
   content: "›";
-  color: #f4c400;
+  color: #c1121f;
   font-weight: bold;
   margin-right: 12px;
 }
@@ -640,8 +640,8 @@ funcao-item {
 
 .status-servidor {
   display: inline-block;
-  color: #f4c400;
-  border: 1px solid #f4c400;
+  color: #c1121f;
+  border: 1px solid #c1121f;
   padding: 6px 12px;
   font-size: 12px;
   font-weight: bold;
@@ -655,7 +655,7 @@ funcao-item {
 }
 
 .hero-home h2 strong {
-  color: #f4c400;
+  color: #c1121f;
 }
 
 .hero-home p {
@@ -679,7 +679,7 @@ funcao-item {
 }
 
 .btn-amarelo {
-  background: #f4c400;
+  background: #c1121f;
   color: #111;
 }
 
@@ -694,7 +694,7 @@ funcao-item {
 }
 
 .indicadores {
-  background: #102b5c;
+  background: #1c1c1c;
   color: white;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -703,7 +703,7 @@ funcao-item {
 }
 
 .indicadores h3 {
-  color: #f4c400;
+  color: #c1121f;
   font-size: 24px;
 }
 
@@ -719,7 +719,7 @@ funcao-item {
 
 .acesso-rapido h2,
 .noticias-home h2 {
-  border-left: 5px solid #f4c400;
+  border-left: 5px solid #c1121f;
   padding-left: 12px;
   margin-bottom: 25px;
 }
@@ -751,7 +751,7 @@ funcao-item {
 }
 
 .atalho-home h3 {
-  color: #003f85;
+  color: #111111;
   margin: 10px 0;
 }
 
@@ -766,7 +766,7 @@ funcao-item {
 }
 
 .titulo-linha a {
-  color: #003f85;
+  color: #111111;
   font-weight: bold;
   text-decoration: none;
 }
@@ -786,8 +786,8 @@ funcao-item {
 }
 
 .noticia-capa {
-  background: #003f85;
-  color: #f4c400;
+  background: #111111;
+  color: #c1121f;
   height: 120px;
   display: flex;
   align-items: center;
@@ -800,7 +800,7 @@ funcao-item {
   display: inline-block;
   margin: 15px 20px 5px;
   font-size: 11px;
-  color: #0057b8;
+  color: #2a2a2a;
   font-weight: bold;
 }
 
@@ -819,13 +819,13 @@ funcao-item {
   background: #fff3cd;
   color: #856404;
   padding: 16px 12%;
-  border-top: 1px solid #f4c400;
-  border-bottom: 1px solid #f4c400;
+  border-top: 1px solid #c1121f;
+  border-bottom: 1px solid #c1121f;
   font-weight: bold;
 }
 
 .rodape-completo {
-  background: #102b5c;
+  background: #1c1c1c;
   color: white;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -836,7 +836,7 @@ funcao-item {
 
 .rodape-completo h3,
 .rodape-completo h4 {
-  color: #f4c400;
+  color: #c1121f;
   margin-bottom: 12px;
 }
 
@@ -849,7 +849,7 @@ funcao-item {
 }
 
 .rodape-completo a:hover {
-  color: #f4c400;
+  color: #c1121f;
 }
 
 /* Responsivo */
@@ -893,7 +893,7 @@ funcao-item {
 }
 
 .cops-home h2 {
-  border-left: 5px solid #f4c400;
+  border-left: 5px solid #c1121f;
   padding-left: 12px;
   margin-bottom: 20px;
 }
@@ -910,7 +910,7 @@ funcao-item {
   border-radius: 6px;
   padding: 20px;
   text-align: center;
-  color: #003f85;
+  color: #111111;
   font-weight: bold;
 }
 
@@ -926,13 +926,13 @@ funcao-item {
 }
 
 .discord-home h2 {
-  border-left: 5px solid #f4c400;
+  border-left: 5px solid #c1121f;
   padding-left: 12px;
   margin-bottom: 25px;
 }
 
 .discord-home-card {
-  background: #102b5c;
+  background: #1c1c1c;
   color: white;
   border-radius: 10px;
   padding: 35px;
@@ -945,7 +945,7 @@ funcao-item {
 
 .discord-home-info span {
   display: inline-block;
-  background: #f4c400;
+  background: #c1121f;
   color: #111;
   padding: 6px 12px;
   font-weight: bold;
@@ -979,7 +979,7 @@ funcao-item {
   height: 150px;
   object-fit: cover;
   border-radius: 8px;
-  border: 3px solid #f4c400;
+  border: 3px solid #c1121f;
   flex-shrink: 0;
 }
 
